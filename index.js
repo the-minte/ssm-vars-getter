@@ -4,7 +4,7 @@ const awsSDK = require('aws-sdk');
 const ssm = new awsSDK.SSM();
 
 const paramsPath = process.argv[2]
-// make it false by default
+/* make it false by default */
 const recursive = (process.argv[3] || '') === 'true'? true : false
 
 ssm.getParametersByPath({Path: paramsPath, WithDecryption: true, Recursive: recursive}, (err, data) => {
