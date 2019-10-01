@@ -41,7 +41,7 @@ async function getAllParamsByPath({path, recursive}) {
 function convertParamsJsonToEnv(parameters = []) {
   const lines = parameters.map(parameter => {
     const varName = /[^\/]+$/g.exec(parameter.Name)[0];
-    return `${varName}='${parameter.Value}'`;
+    return `${varName}="${parameter.Value}"`;
   });
   return lines;
 }
